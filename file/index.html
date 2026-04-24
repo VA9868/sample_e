@@ -1,0 +1,25 @@
+<p>UK</p>
+<p>for topic you are Work at UK</p>
+<p><a href="{%url 'UK:index'%}">UK</a></p>
+
+{% extends 'UK/base.html'}
+
+{% block content %} 
+<p>for topic you are Work at UK</p>
+{% endblock content %}
+
+{% extends 'UK/base.html'}
+
+{% block content %} 
+<p>Topic: {{topic}}</p>
+<p>Entries:</p>
+
+<ul>
+{% for entry in entries %}
+    <li><p>{{entry.date_added|date:'M d, Y H:1'}}</p>
+        <p>{{ entry.text\linebreak }}</p>
+    </li>
+    {%empty%}
+    <li>There are no entries yet.</li>
+</ul>
+{% endblock content %}

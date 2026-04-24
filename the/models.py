@@ -22,5 +22,10 @@ class college(models.Model):
     def __str__(self):
         return self.department
 
+class upload(models.Model):
+    title=models.CharField(max_length=100)
+    image=models.ImageField(upload_to='image/')
+    file = models.FileField(upload_to='file/')
 
-    
+    def __str__(self):
+        return self.title  
